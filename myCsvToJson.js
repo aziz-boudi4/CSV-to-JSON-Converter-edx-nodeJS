@@ -2,7 +2,7 @@ const fs = require('fs');
 const csv = require('csvtojson')
 const csvFilePath = './customer-data.csv'
 
-const convertCsvToJson = (theCsvFilePath) => {
+const convertCsvToJson = (theCsvFilePath=csvFilePath) => {
   // create a json variable where the converted csv will be pushed
   const myJson =[];
 
@@ -19,4 +19,4 @@ const convertCsvToJson = (theCsvFilePath) => {
     })
 }
 
-convertCsvToJson(csvFilePath);
+convertCsvToJson(process.argv[2]);
